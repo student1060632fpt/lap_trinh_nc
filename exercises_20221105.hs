@@ -62,8 +62,22 @@ sum_list (a:as) = a + sum_list as
 is_prime n | [x | x <- [1..n], mod n x == 0] == [1,n] = True
            | otherwise = False
 
--- viết hàm kiểm tra số có phải số chính phương hay không 
+------------------------------------------------------
+-- Bài tập buổi 2 haskell 
+-- 1. viết hàm kiểm tra số có phải số chính phương hay không 
+-- 2. Viết hàm kiểm tra một số có chia hết cho một số khác không 
+-- 3. viêt hàm kiểm tra một mảng có toàn bộ là số chính phương
+------------------------------------------------------
+
+-- bài 1 của mình 
+is_square n = sq * sq == n
+  where sq = floor $ sqrt $ (fromIntegral n::Double)
+-- is_square 25
+
+-- bài 1 của a tiến
 isSquare x =  fromIntegral(round(sqrt(x))) == sqrt(x)
+
+
 
 duplicate [] = []
 duplicate (x:xs) = x : (x : (duplicate xs))
